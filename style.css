@@ -1,0 +1,158 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #f0f0f0;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #1a1a1a;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-bottom: 2px solid #ff1e1e;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.nav-links a {
+  color: #ff4c4c;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+.intro h1 {
+  font-size: 2.5rem;
+  color: #ffffff;
+}
+
+.intro h2 {
+  font-size: 1.5rem;
+  color: #ff4c4c;
+  margin-top: 0.5rem;
+}
+
+.intro img {
+  border-radius: 50%;
+  border: 3px solid #ff4c4c;
+  margin-top: 1rem;
+}
+
+/* Main Content */
+main {
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ff4c4c;
+  border-bottom: 1px solid #ff4c4c;
+  padding-bottom: 0.5rem;
+}
+
+/* About / Projects / Skills */
+.project {
+  background-color: #1e1e1e;
+  padding: 1rem;
+  border-left: 5px solid #ff4c4c;
+  box-shadow: 0 0 10px rgba(255, 30, 30, 0.2);
+  margin-top: 1rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.skills-list li {
+  background-color: #ff4c4c;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* Contact Section */
+#contact p {
+  margin: 1rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  word-spacing: 5;
+}
+
+#contact a {
+  color: #fff;
+  text-decoration: none;
+}
+
+button {
+  background-color: #ff4c4c;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #cc1c1c;
+}
+
+button a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Footer */
+footer {
+  background-color: #1a1a1a;
+  color: #999;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .intro h1 {
+    font-size: 2rem;
+  }
+
+  .intro h2 {
+    font-size: 1.2rem;
+  }
+}
