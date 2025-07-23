@@ -1,86 +1,105 @@
-/* Reset and Base Styling */
+/* Reset & Base Styles */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f7f9fb;
-  color: #333;
-  padding: 2rem;
+    background: #0a0a0a;
+    color: #e0e0e0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Background Animation */
+body::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, #00ffcc33, transparent 70%),
+                radial-gradient(circle at top right, #00ffff22, transparent 70%),
+                radial-gradient(circle at bottom left, #0055ff11, transparent 70%);
+    animation: floatBackground 20s linear infinite;
+    z-index: -1;
+}
+
+@keyframes floatBackground {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(-10%, -10%) rotate(180deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
 }
 
 /* Header */
-header {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
 header h1 {
-  font-size: 2.5rem;
-  color: #00adb5;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff88;
 }
 
-/* Main/Form Container */
-main,
+/* Form Styling */
 form {
-  max-width: 500px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+    background: #121212;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00ffff44;
+    width: 90%;
+    max-width: 400px;
 }
 
-/* Label & Input Styling */
 label {
-  font-weight: bold;
-  margin-bottom: 0.25rem;
+    display: block;
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #ffffffcc;
 }
 
-input,
+input, textarea {
+    width: 100%;
+    margin-top: 5px;
+    padding: 12px 15px;
+    border: 2px solid #00ffff33;
+    background: #1e1e1e;
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #00ffff;
+    box-shadow: 0 0 10px #00ffff66;
+    outline: none;
+}
+
 textarea {
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-}
-
-input:focus,
-textarea:focus {
-  border-color: #00adb5;
-  outline: none;
+    resize: vertical;
+    min-height: 100px;
 }
 
 /* Button Styling */
 button {
-  background-color: #00adb5;
-  color: white;
-  padding: 0.75rem;
-  border: none;
-  font-size: 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    margin-top: 25px;
+    padding: 12px 20px;
+    background: #00ffff;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s, transform 0.2s;
 }
 
 button:hover {
-  background-color: #007b85;
-}
-
-/* Responsive for Mobile */
-@media (max-width: 600px) {
-  body {
-    padding: 1rem;
-  }
-
-  header h1 {
-    font-size: 2rem;
-  }
-
-  main {
-    padding: 0 1rem;
-  }
+    background: #00cccc;
+    transform: scale(1.05);
 }
